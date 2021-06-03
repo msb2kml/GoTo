@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/targetCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/box"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            android:text="Other App"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="@id/targetCont"
+            app:layout_constraintTop_toTopOf="@id/targetCont" />
+
+        <TextView
+            android:id="@+id/TargetName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Target"
+            android:textSize="18sp"
+            app:layout_constraintBaseline_toBaselineOf="@id/other"
+            app:layout_constraintEnd_toStartOf="@id/other"
+            app:layout_constraintStart_toStartOf="@id/targetCont" />
+
+        <TextView
+            android:id="@+id/latTarget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Latitude"
+            app:layout_constraintEnd_toStartOf="@id/lonTarget"
+            app:layout_constraintStart_toStartOf="@id/targetCont"
+            app:layout_constraintTop_toBottomOf="@id/other" />
+
+        <TextView
+            android:id="@+id/lonTarget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Longitude"
+            app:layout_constraintBaseline_toBaselineOf="@id/latTarget"
+            app:layout_constraintEnd_toStartOf="@id/altTarget"
+            app:layout_constraintStart_toEndOf="@id/latTarget" />
+
+        <TextView
+            android:id="@+id/altTarget"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="Altitude"
+            app:layout_constraintBaseline_toBaselineOf="@id/latTarget"
+            app:layout_constraintEnd_toEndOf="@id/targetCont"
+            app:layout_constraintStart_toEndOf="@id/lonTarget" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/left"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="?android:attr/colorButtonNormal"
+        android:gravity="center"
+        android:text="Left"
+        app:layout_constraintBottom_toTopOf="@id/hereCont"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/targetCont" />
+
+    <TextView
+        android:id="@+id/right"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="?attr/colorButtonNormal"
+        android:gravity="center"
+        android:text="Right"
+        app:layout_constraintBottom_toTopOf="@id/hereCont"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/targetCont" />
+
+    <TextView
+        android:id="@+id/azim"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Azimut NNE"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/targetCont" />
+
+    <TextView
+        android:id="@+id/dist"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Distance"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/azim" />
+
+    <TextView
+        android:id="@+id/height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Height"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintTop_toBottomOf="@id/dist"/>
+
+    <TextView
+        android:id="@+id/speed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Closing speed"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintTop_toBottomOf="@id/height"/>
+
+    <TextView
+        android:id="@+id/bearing"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@id/right"
+        app:layout_constraintStart_toEndOf="@id/left"
+        app:layout_constraintTop_toBottomOf="@id/speed"
+        android:text="Bearing SSO" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/hereCont"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/box"
+        app:layout_constraintTop_toBottomOf="@id/bearing"
+        android:paddingBottom="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/here"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="You are here"
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="@id/hereCont"
+            app:layout_constraintStart_toStartOf="@id/hereCont"
+            app:layout_constraintEnd_toEndOf="@id/hereCont"/>
+
+        <TextView
+            android:id="@+id/latHere"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="Latitude"
+            app:layout_constraintEnd_toStartOf="@id/lonHere"
+            app:layout_constraintStart_toStartOf="@id/hereCont"
+            app:layout_constraintTop_toBottomOf="@id/here" />
+
+        <TextView
+            android:id="@+id/lonHere"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Longitude"
+            app:layout_constraintBaseline_toBaselineOf="@id/latHere"
+            app:layout_constraintEnd_toStartOf="@id/altHere"
+            app:layout_constraintStart_toEndOf="@id/latHere" />
+
+        <TextView
+            android:id="@+id/altHere"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:gravity="center"
+            android:text="Altitude"
+            app:layout_constraintBaseline_toBaselineOf="@id/latHere"
+            app:layout_constraintEnd_toEndOf="@id/hereCont"
+            app:layout_constraintStart_toEndOf="@id/lonHere" />
+
+        <TextView
+            android:id="@+id/hereStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@id/hereCont"
+            app:layout_constraintTop_toBottomOf="@id/latHere"
+            app:layout_constraintEnd_toEndOf="@id/hereCont"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/bStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop"
+        android:textAllCaps="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/bRef"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/bRef"
+        />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ref: GPX:"
+        app:layout_constraintStart_toStartOf="@id/bRef"
+        app:layout_constraintTop_toBottomOf="@id/hereCont" />
+
+    <Button
+        android:id="@+id/bRef"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-none-"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        app:layout_constraintEnd_toStartOf="@id/bMap"
+        app:layout_constraintStart_toEndOf="@id/bStop" />
+
+    <Button
+        android:id="@+id/bMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Map"
+        android:textAllCaps="false"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBaseline_toBaselineOf="@id/bRef"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/bRef"/>
+</android.support.constraint.ConstraintLayout>
